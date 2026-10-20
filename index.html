@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Website ôn thi tốt nghiệp THPT: môn học, luyện trắc nghiệm, kho tài liệu và theo dõi tiến độ.">
+<title>Ôn Thi THPT | Học thông minh</title>
+<style>
+:root{--navy:#123451;--blue:#1769aa;--green:#16845b;--bg:#f5f9fc;--ink:#21364a;--muted:#61778b;--line:#dce7ef;--white:#fff;--pale:#eaf5ff;--mint:#e3f7ed;--shadow:0 12px 35px rgba(18,52,81,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,"Segoe UI",Arial,sans-serif}button,input,select{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;color:var(--navy);font-size:1.05rem}.logo{width:42px;height:42px;display:grid;place-items:center;color:white;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--green));font-size:1.3rem}
+.navlinks{display:flex;gap:5px;align-items:center;flex-wrap:wrap}.navlinks a{padding:9px 12px;border-radius:10px;color:#4a6378;font-size:.92rem;font-weight:650}.navlinks a:hover,.navlinks a.active{background:var(--pale);color:var(--blue)}
+.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:8px 12px}
+.hero{padding:66px 0 56px;background:radial-gradient(circle at 84% 16%,#c9f1e1 0,transparent 24%),linear-gradient(125deg,#e9f4ff,#f4fff9)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:100px;background:var(--mint);color:var(--green);font-weight:800;font-size:.84rem}
+h1{margin:18px 0 15px;font-size:clamp(2.3rem,5.3vw,4rem);line-height:1.07;letter-spacing:-.045em;color:var(--navy)}.hero p{max-width:620px;color:var(--muted);font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{border:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:750;background:var(--blue);color:#fff;box-shadow:0 6px 15px #1769aa26}.btn:hover{filter:brightness(.95);transform:translateY(-1px)}.btn.secondary{background:white;color:var(--blue);border:1px solid #c8ddeb;box-shadow:none}.btn.small{padding:8px 12px;font-size:.9rem}
+.focus-card{padding:25px;background:white;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.focus-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.focus-card h3{margin:0;color:var(--navy)}.pill{font-size:.78rem;font-weight:800;padding:5px 9px;border-radius:8px;background:var(--mint);color:var(--green)}
+.task{margin-top:20px}.task-row{display:flex;justify-content:space-between;gap:12px;font-size:.92rem}.track{height:8px;background:#e9f0f5;border-radius:99px;overflow:hidden;margin-top:8px}.track span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),#24a779)}
+section{padding:58px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}.section-head h2{margin:0;color:var(--navy);font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.025em}.section-head p{margin:6px 0 0;color:var(--muted)}.eyebrow-label{color:var(--green);font-size:.8rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.subject{padding:21px;background:white;border:1px solid var(--line);border-radius:18px;transition:.18s;box-shadow:0 4px 15px #12345106}.subject:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#afd1e8}.subject-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.55rem;background:var(--pale)}.subject h3{margin:12px 0 4px;color:var(--navy);font-size:1.08rem}.subject p{margin:0;color:var(--muted);font-size:.92rem}.subject button{margin-top:15px;background:transparent;border:0;color:var(--blue);font-weight:800;padding:0}
+.band{background:#edf6fb}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.step{padding:23px;border-radius:19px;color:white;background:var(--navy)}.step:nth-child(2){background:var(--blue)}.step:nth-child(3){background:var(--green)}.step-no{font-size:.78rem;font-weight:850;letter-spacing:.1em;opacity:.8}.step h3{margin:8px 0}.step p{margin:0;color:#e1eef7;font-size:.94rem}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.feature{background:white;border:1px solid var(--line);border-radius:20px;padding:23px}.feature h3{margin:0 0 6px;color:var(--navy)}.feature p{margin:0 0 15px;color:var(--muted)}.feature .big-icon{font-size:1.8rem}
+.countdown{background:linear-gradient(130deg,#123451,#1769aa);color:white;border-radius:23px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:24px}.countdown h3{margin:0 0 5px;font-size:1.35rem}.countdown p{margin:0;color:#d6e7f4}.count-right{text-align:center;min-width:145px}.count-number{font-size:2.1rem;font-weight:900;line-height:1.2}.count-label{font-size:.82rem;color:#d6e7f4}.date-input{max-width:100%;padding:8px 10px;border:1px solid #ffffff70;background:#ffffff15;color:white;border-radius:9px;margin-top:12px}.date-input::-webkit-calendar-picker-indicator{filter:invert(1)}
+.quiz-form{display:grid;gap:14px}.question{padding:17px;background:#f7fbff;border:1px solid var(--line);border-radius:14px}.question strong{display:block;margin-bottom:10px}.option{display:flex;gap:9px;align-items:start;padding:5px 0;color:#435a70}.option input{margin-top:5px;accent-color:var(--blue)}.result{display:none;padding:15px;border-radius:12px;background:var(--mint);color:#126b4c;font-weight:800}
+.resource-list{display:grid;gap:11px}.resource{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 17px;background:white;border:1px solid var(--line);border-radius:14px}.resource strong{display:block;color:var(--navy)}.resource small{color:var(--muted)}.resource .btn{flex-shrink:0}
+.progress-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-weight:750;font-size:.9rem;margin-bottom:5px}.field input,.field select{width:100%;padding:11px 12px;border:1px solid #cad9e4;border-radius:11px;background:white;color:var(--ink)}.field.full{grid-column:1/-1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.stat{padding:17px;background:#f1f8fd;border-radius:14px}.stat strong{display:block;font-size:1.45rem;color:var(--navy)}.stat span{font-size:.85rem;color:var(--muted)}.table-wrap{overflow:auto;margin-top:18px}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line)}th{color:var(--navy);background:#f4f9fc}
+.notice{font-size:.86rem;color:var(--muted);margin-top:13px}.resource input{min-width:0}
+footer{background:#102d47;color:#d9e7f2;padding:28px 0}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.9rem}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:12px 4%;flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:12px}.menu-btn{display:block}.countdown{align-items:flex-start;flex-direction:column}.count-right{text-align:left}.feature-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}.hero{padding:46px 0}.section-head{align-items:flex-start;flex-direction:column}.progress-form{grid-template-columns:1fr}.field.full{grid-column:auto}.stats{grid-template-columns:1fr}.resource{align-items:flex-start;flex-direction:column}.brand{font-size:.95rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="logo">✦</span><span>Ôn Thi THPT</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Mở menu">☰</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="#home">Trang chủ</a><a href="#mon-hoc">Môn học</a><a href="#luyen-de">Luyện đề</a><a href="#tai-lieu">Kho tài liệu</a><a href="#tien-do">Tiến độ</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">✦ Góc học tập của bạn</span>
+      <h1>Học có kế hoạch.<br>Thi thật tự tin.</h1>
+      <p>Hệ thống kiến thức, luyện tập từng môn và xây dựng thói quen học tập hiệu quả cho kỳ thi tốt nghiệp THPT.</p>
+      <div class="actions"><a class="btn" href="#mon-hoc">Khám phá môn học →</a><a class="btn secondary" href="#luyen-de">Làm bài thử</a></div>
+    </div>
+    <aside class="focus-card">
+      <div class="focus-top"><h3>📚 Kế hoạch học hôm nay</h3><span class="pill">Gợi ý</span></div>
+      <div class="task"><div class="task-row"><span>Toán · Hàm số</span><b>25 phút</b></div><div class="track"><span style="width:70%"></span></div></div>
+      <div class="task"><div class="task-row"><span>Tiếng Anh · Từ vựng</span><b>20 phút</b></div><div class="track"><span style="width:45%"></span></div></div>
+      <div class="task"><div class="task-row"><span>Ôn lại kiến thức cũ</span><b>15 phút</b></div><div class="track"><span style="width:30%"></span></div></div>
+      <p class="notice">Mẹo nhỏ: học theo phiên ngắn, nghỉ giải lao và ghi lại lỗi sai.</p>
+    </aside>
+  </div>
+</section>
+<section id="mon-hoc">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow-label">Học theo chuyên đề</div><h2>Chọn môn để ôn tập</h2><p>Bắt đầu từ môn bạn muốn củng cố hôm nay.</p></div></div>
+    <div class="cards">
+      <article class="subject"><div class="subject-icon">📐</div><h3>Toán</h3><p>Hàm số, mũ – logarit, hình học và xác suất.</p><button onclick="showSubject('Toán')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">📖</div><h3>Ngữ văn</h3><p>Đọc hiểu, nghị luận xã hội và nghị luận văn học.</p><button onclick="showSubject('Ngữ văn')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">🌍</div><h3>Tiếng Anh</h3><p>Từ vựng, ngữ pháp và đọc hiểu.</p><button onclick="showSubject('Tiếng Anh')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">⚡</div><h3>Vật lí</h3><p>Công thức trọng tâm, đồ thị và bài tập vận dụng.</p><button onclick="showSubject('Vật lí')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">🧪</div><h3>Hóa học</h3><p>Lý thuyết, phản ứng và bài tập tính toán.</p><button onclick="showSubject('Hóa học')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">🧬</div><h3>Sinh học</h3><p>Di truyền, tiến hóa và sinh thái học.</p><button onclick="showSubject('Sinh học')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">🏛️</div><h3>Lịch sử</h3><p>Hệ thống mốc thời gian và sự kiện.</p><button onclick="showSubject('Lịch sử')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">🗺️</div><h3>Địa lí</h3><p>Kỹ năng Atlat, biểu đồ và số liệu.</p><button onclick="showSubject('Địa lí')">Xem gợi ý ôn tập →</button></article>
+      <article class="subject"><div class="subject-icon">⚖️</div><h3>Giáo dục kinh tế và pháp luật</h3><p>Khái niệm, tình huống và vận dụng.</p><button onclick="showSubject('Giáo dục kinh tế và pháp luật')">Xem gợi ý ôn tập →</button></article>
+    </div>
+    <div id="subjectTip" class="result" style="margin-top:18px"></div>
+  </div>
+</section>
+<section class="band" id="lo-trinh">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow-label">Bắt đầu từ hôm nay</div><h2>Lộ trình ôn thi 3 bước</h2><p>Chia mục tiêu lớn thành những việc nhỏ, dễ thực hiện.</p></div></div>
+    <div class="steps">
+      <article class="step"><div class="step-no">BƯỚC 01</div><h3>Ôn nền tảng</h3><p>Rà soát kiến thức cơ bản, ghi lại phần chưa hiểu và bổ sung lý thuyết.</p></article>
+      <article class="step"><div class="step-no">BƯỚC 02</div><h3>Luyện chuyên đề</h3><p>Làm bài theo từng dạng, kiểm tra đáp án và ghi chú lỗi thường gặp.</p></article>
+      <article class="step"><div class="step-no">BƯỚC 03</div><h3>Làm đề tổng hợp</h3><p>Thử làm đề theo thời gian quy định, phân tích kết quả để điều chỉnh kế hoạch.</p></article>
+    </div>
+  </div>
+</section>
+<section id="dem-nguoc">
+  <div class="wrap">
+    <div class="countdown">
+      <div><h3>🗓️ Đếm ngược đến ngày thi</h3><p>Chọn ngày thi chính thức để xem số ngày còn lại.</p><label for="examDate" class="notice" style="color:#d6e7f4">Ngày thi (chọn ngày):</label><br><input type="date" id="examDate" class="date-input"></div>
+      <div class="count-right"><div class="count-number" id="daysLeft">—</div><div class="count-label" id="countLabel">ngày còn lại</div></div>
+    </div>
+    <p class="notice">Ngày thi chưa được đặt sẵn vì cần đối chiếu lịch chính thức của kỳ thi bạn tham gia. Ngày bạn chọn được lưu trên trình duyệt hiện tại.</p>
+  </div>
+</section>
+<section id="luyen-de" class="band">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow-label">Thử sức ngay</div><h2>Bài trắc nghiệm mẫu</h2><p>Bài mẫu 5 câu để thử tính năng chấm điểm tự động của website.</p></div></div>
+    <form class="quiz-form" id="quizForm">
+      <div class="question"><strong>1. Đạo hàm của hàm số f(x) = x² là gì?</strong><label class="option"><input type="radio" name="q1" value="a">  x</label><label class="option"><input type="radio" name="q1" value="b">  2x</label><label class="option"><input type="radio" name="q1" value="c">  x²</label></div>
+      <div class="question"><strong>2. Tác phẩm “Truyện Kiều” do ai sáng tác?</strong><label class="option"><input type="radio" name="q2" value="a"> Nguyễn Trãi</label><label class="option"><input type="radio" name="q2" value="b"> Nguyễn Du</label><label class="option"><input type="radio" name="q2" value="c"> Hồ Xuân Hương</label></div>
+      <div class="question"><strong>3. Chọn dạng đúng: “She ___ to school every day.”</strong><label class="option"><input type="radio" name="q3" value="a"> go</label><label class="option"><input type="radio" name="q3" value="b"> going</label><label class="option"><input type="radio" name="q3" value="c"> goes</label></div>
+      <div class="question"><strong>4. Công thức hóa học của nước là gì?</strong><label class="option"><input type="radio" name="q4" value="a"> H₂O</label><label class="option"><input type="radio" name="q4" value="b"> CO₂</label><label class="option"><input type="radio" name="q4" value="c"> O₂</label></div>
+      <div class="question"><strong>5. Trái Đất quay quanh thiên thể nào?</strong><label class="option"><input type="radio" name="q5" value="a"> Mặt Trăng</label><label class="option"><input type="radio" name="q5" value="b"> Sao Hỏa</label><label class="option"><input type="radio" name="q5" value="c"> Mặt Trời</label></div>
+      <div><button class="btn" type="submit">Nộp bài và xem điểm</button> <button class="btn secondary" type="reset" id="resetQuiz">Làm lại</button></div>
+      <div class="result" id="quizResult" role="status"></div>
+    </form>
+    <p class="notice">Đây là bài mẫu trên trình duyệt, không gửi điểm lên máy chủ và không lưu hồ sơ giữa các thiết bị.</p>
+  </div>
+</section>
+<section id="tai-lieu">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow-label">Tập trung tài nguyên</div><h2>Kho tài liệu học tập</h2><p>Thêm liên kết tài liệu của bạn bằng cách sửa các đường dẫn trong mã nguồn.</p></div></div>
+    <div class="resource-list">
+      <div class="resource"><div><strong>📂 Google Drive của bạn</strong><small>Lưu đề thi, đáp án và tài liệu PDF.</small></div><a class="btn small" href="https://drive.google.com/" target="_blank" rel="noopener">Mở Drive ↗</a></div>
+      <div class="resource"><div><strong>📝 Google Forms</strong><small>Tạo bài kiểm tra tự chấm điểm và biểu mẫu luyện tập.</small></div><a class="btn small" href="https://forms.google.com/" target="_blank" rel="noopener">Tạo bài thi ↗</a></div>
+      <div class="resource"><div><strong>📊 Google Sheets</strong><small>Lập bảng điểm và theo dõi tiến độ học tập.</small></div><a class="btn small" href="https://sheets.google.com/" target="_blank" rel="noopener">Mở Sheets ↗</a></div>
+    </div>
+    <p class="notice">Các liên kết trên mở công cụ Google. Bạn có thể thay chúng bằng tài liệu và đề thi cụ thể của mình khi đã tải lên Drive.</p>
+  </div>
+</section>
+<section class="band" id="tien-do">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow-label">Theo dõi thói quen</div><h2>Tiến độ học tập của bạn</h2><p>Ghi lại bài đã làm và xem thống kê ngay trên trình duyệt này.</p></div></div>
+    <form id="progressForm" class="progress-form">
+      <div class="field"><label for="studyDate">Ngày học</label><input id="studyDate" type="date" required></div>
+      <div class="field"><label for="studySubject">Môn học</label><select id="studySubject"><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>Vật lí</option><option>Hóa học</option><option>Sinh học</option><option>Lịch sử</option><option>Địa lí</option><option>Giáo dục kinh tế và pháp luật</option></select></div>
+      <div class="field"><label for="studyTask">Tên bài/đề đã làm</label><input id="studyTask" placeholder="Ví dụ: Hàm số - đề số 1" required></div>
+      <div class="field"><label for="studyScore">Điểm (thang 10)</label><input id="studyScore" type="number" min="0" max="10" step="0.25" placeholder="0–10" required></div>
+      <div class="field full"><button class="btn" type="submit">+ Ghi nhận tiến độ</button> <button class="btn secondary" type="button" id="clearProgress">Xóa dữ liệu trên thiết bị</button></div>
+    </form>
+    <div class="stats">
+      <div class="stat"><strong id="totalTasks">0</strong><span>Bài đã ghi nhận</span></div>
+      <div class="stat"><strong id="averageScore">—</strong><span>Điểm trung bình</span></div>
+      <div class="stat"><strong id="bestScore">—</strong><span>Điểm cao nhất</span></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>Ngày</th><th>Môn học</th><th>Bài/đề</th><th>Điểm</th><th></th></tr></thead><tbody id="progressRows"><tr><td colspan="5">Chưa có dữ liệu. Hãy ghi nhận bài đầu tiên của bạn.</td></tr></tbody></table></div>
+    <p class="notice">Dữ liệu tiến độ chỉ lưu trong bộ nhớ trình duyệt của thiết bị hiện tại. Nếu xóa dữ liệu trình duyệt hoặc đổi thiết bị, dữ liệu có thể mất. Đây chưa phải hệ thống tài khoản đồng bộ trực tuyến.</p>
+  </div>
+</section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 Ôn Thi THPT · Học tập thông minh</span><span>Kiên trì mỗi ngày, tiến bộ từng bước.</span></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn'),navlinks=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>navlinks.classList.toggle('open'));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+function showSubject(name){const box=document.getElementById('subjectTip');box.style.display='block';box.textContent='Gợi ý cho môn '+name+': hãy ôn lại lý thuyết trọng tâm, làm bài theo chuyên đề và ghi lại những câu trả lời sai. Bạn có thể thêm tài liệu riêng cho môn này trong phần Kho tài liệu.';box.scrollIntoView({behavior:'smooth',block:'nearest'});}
+const answerKey={q1:'b',q2:'b',q3:'c',q4:'a',q5:'c'};
+document.getElementById('quizForm').addEventListener('submit',e=>{e.preventDefault();let score=0,answered=0;for(const [q,a] of Object.entries(answerKey)){const picked=document.querySelector('input[name="'+q+'"]:checked');if(picked){answered++;if(picked.value===a)score++;}}const r=document.getElementById('quizResult');r.style.display='block';r.textContent='Kết quả: '+score+'/5 câu đúng ('+(score*2)+'/10 điểm). Bạn đã trả lời '+answered+'/5 câu.';r.scrollIntoView({behavior:'smooth',block:'nearest'});});
+document.getElementById('resetQuiz').addEventListener('click',()=>{document.getElementById('quizResult').style.display='none';});
+const examDate=document.getElementById('examDate'),daysLeft=document.getElementById('daysLeft'),countLabel=document.getElementById('countLabel');
+function updateCountdown(){if(!examDate.value){daysLeft.textContent='—';countLabel.textContent='chọn ngày thi';return;}const target=new Date(examDate.value+'T00:00:00');const today=new Date();today.setHours(0,0,0,0);const days=Math.ceil((target-today)/86400000);if(days>0){daysLeft.textContent=days;countLabel.textContent='ngày còn lại';}else if(days===0){daysLeft.textContent='0';countLabel.textContent='hôm nay là ngày thi';}else{daysLeft.textContent=Math.abs(days);countLabel.textContent='ngày kể từ ngày đã chọn';}}
+try{const savedDate=localStorage.getItem('examDate');if(savedDate)examDate.value=savedDate;}catch(e){}
+examDate.addEventListener('change',()=>{try{localStorage.setItem('examDate',examDate.value);}catch(e){}updateCountdown();});updateCountdown();
+const todayISO=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
+document.getElementById('studyDate').value=todayISO();
+let progress=[];
+try{progress=JSON.parse(localStorage.getItem('studyProgress')||'[]');if(!Array.isArray(progress))progress=[];}catch(e){progress=[]}
+function saveProgress(){try{localStorage.setItem('studyProgress',JSON.stringify(progress));}catch(e){}renderProgress();}
+function renderProgress(){document.getElementById('totalTasks').textContent=progress.length;const scores=progress.map(x=>Number(x.score));document.getElementById('averageScore').textContent=scores.length?(scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2):'—';document.getElementById('bestScore').textContent=scores.length?Math.max(...scores).toString():'—';const tbody=document.getElementById('progressRows');tbody.innerHTML='';if(!progress.length){tbody.innerHTML='<tr><td colspan="5">Chưa có dữ liệu. Hãy ghi nhận bài đầu tiên của bạn.</td></tr>';return;}progress.slice().reverse().forEach((item,revIndex)=>{const idx=progress.length-1-revIndex,tr=document.createElement('tr');[item.date,item.subject,item.task,item.score+'/10'].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.appendChild(td);});const td=document.createElement('td'),b=document.createElement('button');b.type='button';b.className='btn small secondary';b.textContent='Xóa';b.addEventListener('click',()=>{progress.splice(idx,1);saveProgress();});td.appendChild(b);tr.appendChild(td);tbody.appendChild(tr);});}
+document.getElementById('progressForm').addEventListener('submit',e=>{e.preventDefault();const score=Number(document.getElementById('studyScore').value);if(score<0||score>10)return;progress.push({date:document.getElementById('studyDate').value,subject:document.getElementById('studySubject').value,task:document.getElementById('studyTask').value.trim(),score});saveProgress();document.getElementById('studyTask').value='';document.getElementById('studyScore').value='';});
+document.getElementById('clearProgress').addEventListener('click',()=>{if(confirm('Bạn có chắc muốn xóa toàn bộ tiến độ đã lưu trên thiết bị này?')){progress=[];saveProgress();}});
+renderProgress();
+</script>
+</body>
+</html>
